@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -11,31 +11,37 @@
   <title>Conversor De Moedas</title>
 </head>
 
-<body class="bg-slate-600 flex justify-center">
-  <main class="mt-10 mx-40 w-full h-96 bg-white rounded-2xl shadow-md shadow-black">
+<body class="bg-slate-600 flex flex-col justify-center">
+  <main class="mt-24 w-full mx-40 bg-white rounded-2xl shadow-md shadow-black relative">
+    <div class="flex justify-center mt-10">
+      <select class="text-2xl" id="conversao">
+        <option value="dolarParaReal" selected>Dolar > Real</option>
+        <option value="euroParaReal">Euro > Real</option>
+        <option value="pesoParaReal">Peso > Real</option>
+      </select>
+      <button id="btn" class="border">Converter</button>
+    </div>
+
     <div class="flex flex-row justify-between">
       <div class="ms-16 mt-10">
-        <p id="convertida" class="text-2xl"></p>
+        <p id="convertida" class="text-2xl">Moeda</p>
       </div>
-      <div class="mt-10 text-2xl">
+      <div class="mt-10 text-2xl items-center">
         <i class="fa-solid fa-arrow-right"></i>
       </div>
 
       <div class="me-16 mt-10">
-        <p id="conversora" class="text-2xl"></p>
+        <p id="conversora" class="text-2xl">Moeda</p>
       </div>
     </div>
 
     <div class="flex justify-center mt-24">
-      <div id="valor" class="text-6xl">
-        valor
-      </div>
+      <div id="valor" class="text-6xl">0.00</div>
     </div>
 
-    <div class="mt-28 ms-16 text-sm">
+    <div class="mt-40 mb-10 ms-16 text-sm">
       <p id="atualizado">Atualizado em:</p>
     </div>
-
   </main>
 
   <script src="main.js"></script>
