@@ -3,8 +3,6 @@ async function inical() {
   const api = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,ARS-BRL,EUR-BRL')
   const moeda = await api.json()
 
-  console.table(moeda)
-
   const select = document.querySelector('#conversao')
   const botaoConverter = document.querySelector('#btn')
 
@@ -14,13 +12,18 @@ async function inical() {
     pesoParaReal: moeda.ARSBRL,
   }
 
-  let convertida = document.querySelector('#convertida')
-  let conversora = document.querySelector('#conversora')
-  let valor = document.querySelector('#valor')
-  let atualizado = document.querySelector('#atualizado')
+  const conteudo = document.querySelector('#conteudo')
+  conteudo.classList.add('hidden')
+  
+  const convertida = document.querySelector('#convertida')
+  const conversora = document.querySelector('#conversora')
+  const valor = document.querySelector('#valor')
+  const atualizado = document.querySelector('#atualizado')
 
   botaoConverter.addEventListener('click', () => {
     const selecionada = conversoes[select.value]
+
+    conteudo.classList.remove('hidden')
 
     convertida.innerHTML = selecionada.code
     conversora.innerHTML = selecionada.codein
