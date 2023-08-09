@@ -4,43 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="/dist/output.css" rel="stylesheet">
   <title>Conversor De Moedas</title>
 </head>
 
 <body class="bg-slate-600 flex flex-col justify-center">
-  <main class="mt-24 w-full mx-40 bg-white rounded-2xl shadow-md shadow-black relative">
-    <div class="flex justify-center mt-10">
+  <main id="container" class="mt-24 mx-40 bg-white rounded-2xl shadow-md shadow-black">
+    <div class="flex justify-center mt-10 mb-10">
       <select class="text-2xl" id="conversao">
         <option value="dolarParaReal" selected>Dolar > Real</option>
         <option value="euroParaReal">Euro > Real</option>
         <option value="pesoParaReal">Peso > Real</option>
       </select>
-      <button id="btn" class="border">Converter</button>
+      <button id="btn" class="ms-10">Converter</button>
     </div>
+    <div id="conteudo">
+      <div class="flex flex-row justify-between">
+        <div class="ms-16 mt-10">
+          <p id="convertida" class="text-2xl"></p>
+        </div>
+        <div class="mt-10 text-2xl items-center">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-    <div class="flex flex-row justify-between">
-      <div class="ms-16 mt-10">
-        <p id="convertida" class="text-2xl">Moeda</p>
+        <div class="me-16 mt-10">
+          <p id="conversora" class="text-2xl"></p>
+        </div>
       </div>
-      <div class="mt-10 text-2xl items-center">
-        <i class="fa-solid fa-arrow-right"></i>
+
+      <div class="flex justify-center mt-24">
+        <div id="valor" class="text-6xl"></div>
       </div>
 
-      <div class="me-16 mt-10">
-        <p id="conversora" class="text-2xl">Moeda</p>
+      <div class="mt-40 mb-10 ms-16 text-sm">
+        <p id="atualizado"></p>
       </div>
-    </div>
-
-    <div class="flex justify-center mt-24">
-      <div id="valor" class="text-6xl">0.00</div>
-    </div>
-
-    <div class="mt-40 mb-10 ms-16 text-sm">
-      <p id="atualizado">Atualizado em:</p>
     </div>
   </main>
 
