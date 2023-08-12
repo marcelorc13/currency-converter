@@ -23,11 +23,13 @@ async function inical() {
   botaoConverter.addEventListener('click', () => {
     const selecionada = conversoes[select.value]
 
+    const valorFormatado = Number(selecionada.high)
+
     conteudo.classList.remove('hidden')
 
     convertida.innerHTML = selecionada.code
     conversora.innerHTML = selecionada.codein
-    valor.innerHTML = `${selecionada.high}<span class="font-normal text-4xl">${selecionada.codein}</span>`
+    valor.innerHTML = `${valorFormatado.toFixed(2)}<span class="font-normal text-4xl">${selecionada.codein}</span>`
     atualizado.innerHTML = `Atualizada em: ${selecionada.create_date}`
   })
 }
